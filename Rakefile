@@ -8,6 +8,11 @@ require 'rake/extensiontask'
 # Hoe.plugin :racc
 # Hoe.plugin :rubyforge
 
+if ENV['PHP_EMBED_DIR']
+  ENV['PATH'] += ':' + File.join(ENV['PHP_EMBED_DIR'], 'bin')
+  ENV['LD_LIBRARY_PATH'] = ':' + File.join(ENV['PHP_EMBED_DIR'], 'lib')
+end
+
 Hoe.spec 'ruby_php' do
   developer('Martin Pärtel', 'martin.partel@gmail.com')
   self.readme_file = 'README.markdown'
@@ -17,7 +22,11 @@ Hoe.spec 'ruby_php' do
 
   Rake::ExtensionTask.new('ruby_php', spec) do |ext|
     ext.lib_dir = File.join('lib', 'ruby_php')
+    if ENV['PHP_EMBED_DIR']
+      ext.config_options << "--with-php-dir=#{ENV['PHP_EMBED_DIR']}"
+    end
   end
 end
 
 Rake::Task[:test].prerequisites << :compile
+

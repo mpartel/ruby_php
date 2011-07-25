@@ -1,0 +1,8 @@
+ext/ruby_php/extconf.rb
+ext/ruby_php/ruby_php.c
+lib/ruby_php.rb
+test/HelloWorldTest.rb
+History.txt
+Manifest.txt
+Rakefile
+README.markdown

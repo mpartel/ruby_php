@@ -1,33 +1,16 @@
 # ruby_php #
 
-Attempts to embed a PHP interpreter inside Ruby so that legacy PHP code can be called from shiny new Ruby code.
+An *early one-evening prototype* of a project to embed PHP inside Ruby so that legacy PHP code can be called from shiny new Ruby code. The goal is to not only be able to call PHP functions and methods but also wrap objects, arrays and blocks so that they can be passed between languages with relatively few surprises. Possible use cases include craziness like using RSpec to test a Zend Framework project or using ActiveRecords from a PHP script.
+
+I'll probably really start this project during 2012.
 
 ## Links ##
 
 * ["Embedding PHP" - presentation by Sara Golemon](http://www.docstoc.com/docs/10783691/Embedding-PHP)
 * ["Embedding the PHP Interpreter" - blog post by Aivars Kalvāns](http://phi.lv/?p=376)
+* [README.EXT of MRI - readme for Ruby extension writers](https://github.com/ruby/ruby/blob/trunk/README.EXT)
 
 ## LICENSE ##
 
-(The MIT License)
+None. Public domain.
 
-Copyright (c) 2011 Martin Pärtel
-
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-'Software'), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

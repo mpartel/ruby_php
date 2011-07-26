@@ -1,7 +1,7 @@
 ext/ruby_php/extconf.rb
 ext/ruby_php/ruby_php.c
 lib/ruby_php.rb
-test/HelloWorldTest.rb
+test/test_eval.rb
 History.txt
 Manifest.txt
 Rakefile

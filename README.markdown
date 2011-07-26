@@ -4,6 +4,7 @@ Attempts to embed a PHP interpreter inside Ruby so that legacy PHP code can be c
 
 ## Links ##
 
+* ["Embedding PHP" - presentation by Sara Golemon](http://www.docstoc.com/docs/10783691/Embedding-PHP)
 * ["Embedding the PHP Interpreter" - blog post by Aivars Kalvāns](http://phi.lv/?p=376)
 
 ## LICENSE ##

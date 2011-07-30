@@ -1,8 +1,12 @@
+History.txt
+Manifest.txt
+README.markdown
+Rakefile
 ext/ruby_php/extconf.rb
 ext/ruby_php/ruby_php.c
 lib/ruby_php.rb
+test/forking_test_case.rb
+test/method_call_recorder.rb
 test/test_eval.rb
-History.txt
-Manifest.txt
-Rakefile
-README.markdown
+test/test_helper.rb
+valgrind.supp

@@ -1,0 +1,48 @@
+# Valgrind suppressions.
+# Used by default by `rake test:valgrind`.
+
+{
+   Ruby 1.8 parser
+   Memcheck:Cond
+   ...
+   fun:rb_newobj
+   ...
+   fun:ruby_yyparse
+   ...
+   fun:rb_load
+   fun:rb_require_safe
+   ...
+}
+
+{
+   Ruby 1.8 parser
+   Memcheck:Value8
+   ...
+   fun:rb_newobj
+   ...
+   fun:ruby_yyparse
+   ...
+   fun:rb_load
+   fun:rb_require_safe
+   ...
+}
+
+{
+  Ruby 1.8 GC
+  Memcheck:Value8
+  ...
+  fun:rb_gc
+  fun:rb_gc_start
+  ...
+}
+
+{
+  Ruby 1.8 GC
+  Memcheck:Cond
+  ...
+  fun:rb_gc
+  fun:rb_gc_start
+  ...
+}
+
+

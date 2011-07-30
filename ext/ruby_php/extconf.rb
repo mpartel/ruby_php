@@ -2,6 +2,8 @@ require 'mkmf'
 LIBDIR      = Config::CONFIG['libdir']
 INCLUDEDIR  = Config::CONFIG['includedir']
 
+$CFLAGS << " -Wall"
+
 HEADER_DIRS = [
   '/opt/local/include', # macports
   '/usr/local/include',

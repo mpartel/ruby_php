@@ -15,6 +15,7 @@ end
 
 Hoe.spec 'ruby_php' do
   developer('Martin Pärtel', 'martin.partel@gmail.com')
+  self.version = "0.0.1"
   self.readme_file = 'README.markdown'
   
   self.extra_dev_deps << ['rake-compiler', '>= 0']
@@ -29,4 +30,31 @@ Hoe.spec 'ruby_php' do
 end
 
 Rake::Task[:test].prerequisites << :compile
+
+
+desc "Run tests under valgrind. Set VALGRIND_OPTS to give options to valgrind."
+task "test:valgrind" => :compile do
+  valgrind_opts = [
+    "--error-exitcode=1",
+    "--suppressions=valgrind.supp",
+    "--leak-check=no",
+    "-q"
+  ].join(' ') + ' ' + ENV['VALGRIND_OPTS'].to_s
+  
+  test_with_tool("valgrind #{valgrind_opts}")
+end
+
+def test_with_tool(tool_cmd)
+  ruby_cmd = "ruby #{Hoe::RUBY_FLAGS}"
+  requires = []
+  requires << 'rubygems'
+  requires << 'test/unit'
+  requires += Dir.glob('test/test_*.rb')
+  requires.map! {|f| "require \"#{f}\"" }
+  
+  cmd = "#{tool_cmd} #{ruby_cmd} -e '#{requires.join("; ")}'"
+  puts cmd
+  system(cmd)
+end
+
 
